@@ -56,7 +56,7 @@ static int read_frame(void) {
 #else
   unsigned char* yuv = malloc(640 * 480 * 3 * sizeof(unsigned char) / 2);
   if (!yuv) return -1;
-  YUYVtoYUV420(640, 480, buffers[buf.index].start, yuv);
+  YUYVtoYUV420P(640, 480, buffers[buf.index].start, yuv);
   //if ( !fwrite(buffers[buf.index].start, 640 * 480 * 2, 1, fp_yuyv))
     //return -1;
   //if ( !fwrite(yuv, 640 * 480 * 3 / 2, 1, fp_yuyv))
